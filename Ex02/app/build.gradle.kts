@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -8,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.ex02"
-        minSdk = 32
+        minSdk = 27
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -29,6 +31,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildDir = File("D:/app/Android/Gradle/app/build")
+    buildFeatures {
+        viewBinding = false
+    }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
